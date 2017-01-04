@@ -1,10 +1,6 @@
 package jandan;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashSet;
@@ -20,7 +16,7 @@ public class spiderIO {// 爬虫IO类
 			InputStreamReader isr = new InputStreamReader(con.getInputStream());
 			BufferedReader bfReader = new BufferedReader(isr);
 			StringBuilder sb = new StringBuilder();
-			String line = null;
+			String line;
 			while ((line = bfReader.readLine()) != null) {
 				sb.append(line);
 			}

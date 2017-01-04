@@ -1,14 +1,8 @@
 package jandan;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class getImage {// 下载图片
 
@@ -23,7 +17,7 @@ public class getImage {// 下载图片
 			InputStream is = con.getInputStream();
 			ByteArrayOutputStream os = new ByteArrayOutputStream();
 			byte[] buffer = new byte[1024];
-			int len = 0;
+			int len;
 			while ((len = is.read(buffer)) != -1) {
 				os.write(buffer, 0, len);
 			}
@@ -47,7 +41,7 @@ public class getImage {// 下载图片
 	public static void main(String[] args) throws IOException {
 		File md = new File("D:\\OOXX.md");
 		BufferedReader bf = new BufferedReader(new FileReader(md));
-		String line = new String();
+		String line;
 		int i = 1;
 		while ((line = bf.readLine()) != null) {
 			line = line.substring(4, line.length() - 1);
